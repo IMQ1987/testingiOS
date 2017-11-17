@@ -18,6 +18,8 @@
 		7DA1D6F01FB488F600D498E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA1D6EF1FB488F600D498E8 /* Assets.xcassets */; };
 		7DA1D6F31FB488F600D498E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA1D6F11FB488F600D498E8 /* LaunchScreen.storyboard */; };
 		7DA1D6FC1FB4893200D498E8 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1D6FB1FB4893200D498E8 /* SecondVC.swift */; };
+		7DB026771FBDF8030000DC52 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB026761FBDF8030000DC52 /* AuthService.swift */; };
+		7DB0267A1FBDFA0A0000DC52 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB026791FBDFA0A0000DC52 /* Constants.swift */; };
 		7DC7CE5A1FB4A7160004E3A6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC7CE591FB4A7160004E3A6 /* TextField.swift */; };
 		7DEB32631FB5B34C00BB03D2 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB32621FB5B34C00BB03D2 /* DataServices.swift */; };
 		7DEB32661FB5B69300BB03D2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB32651FB5B69300BB03D2 /* Category.swift */; };
@@ -45,6 +47,8 @@
 		7DA1D6F21FB488F600D498E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DA1D6F41FB488F600D498E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DA1D6FB1FB4893200D498E8 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		7DB026761FBDF8030000DC52 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		7DB026791FBDFA0A0000DC52 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7DC7CE591FB4A7160004E3A6 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		7DEB32621FB5B34C00BB03D2 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		7DEB32651FB5B69300BB03D2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		7DA1D6E71FB488F600D498E8 /* testingArea */ = {
 			isa = PBXGroup;
 			children = (
+				7DB026781FBDF9FC0000DC52 /* Utilities */,
 				7D722A7C1FB9A36100B89F77 /* Supporting Files */,
 				7DEB32641FB5B68000BB03D2 /* Model */,
 				7DEB32611FB5B33E00BB03D2 /* Services */,
@@ -130,6 +135,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		7DB026781FBDF9FC0000DC52 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7DB026791FBDFA0A0000DC52 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7DC7CE581FB4A6F20004E3A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				7DEB32621FB5B34C00BB03D2 /* DataServices.swift */,
+				7DB026761FBDF8030000DC52 /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -294,6 +308,7 @@
 				7DA1D6EB1FB488F600D498E8 /* HomeVC.swift in Sources */,
 				7D722A821FB9A64800B89F77 /* ChannelVC.swift in Sources */,
 				7DEB326B1FB5DEB700BB03D2 /* CategoryCell.swift in Sources */,
+				7DB0267A1FBDFA0A0000DC52 /* Constants.swift in Sources */,
 				7DA1D6FC1FB4893200D498E8 /* SecondVC.swift in Sources */,
 				7D722A841FB9C78500B89F77 /* GridVC.swift in Sources */,
 				7D722A861FB9CC1100B89F77 /* Products.swift in Sources */,
@@ -302,6 +317,7 @@
 				7D722A801FB9A38000B89F77 /* SWRevealViewController.m in Sources */,
 				7DC7CE5A1FB4A7160004E3A6 /* TextField.swift in Sources */,
 				7DEB32661FB5B69300BB03D2 /* Category.swift in Sources */,
+				7DB026771FBDF8030000DC52 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

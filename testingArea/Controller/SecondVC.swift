@@ -8,7 +8,21 @@
 
 import UIKit
 
-class SecondVC: UIViewController {
+class SecondVC: UIViewController
+//, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+{
+    
+    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 10
+//    }
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionview.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FreelancerCell
+//        return cell
+//    }
+    
 
     //    definition der variablen um textfieldwert aus prepare zu bekommen
     var labelText = ""
@@ -25,47 +39,47 @@ class SecondVC: UIViewController {
         
     }
     
-    
+//    var collectionview: UICollectionView!
+//    var cellId = "Cell"
     
     //    var buttons = [UIButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         nameLabel.text = labelText
 
-        var array123 = ["shirt01","shirt01.png","hoodie01","hat01.png","digital","digital.png","hat01","hoodie01.png"]
+        var array1 = ["shirt01","shirt01.png","hoodie01","hoodie01.png","hat01","hat01.png","digital","digital.png","shirt01","shirt01.png","hoodie01","hat01.png","digital","digital.png","hat01","hoodie01.png"]
+        var length = array1.count-1
+        
+        let breite = view.frame.size.width
+        let hoehe = view.frame.size.height
+        
+        let maxWidthItem = Int((breite / 110) - 1)
+        let maxHeightItem = (Int(hoehe / 110) - 1 )
+//        let maxWidthItem = Int((breite / 110)-1)
+//        let maxHeightItem = (Int(hoehe / 110) - 2)
+        var result = Int(maxHeightItem * maxWidthItem)
         
         
-        var breite = view.frame.size.width
-        var hoehe = view.frame.size.height
-        
-        var maxWidth = Int(breite / 60)
-        var maxHeight = (Int(hoehe / 60) - 1)
-//        einbauen der maxWidth und maxheight & gegenprüfen wie viele vorhanden sind ansonsten diese    nehmen
-        if array123.count <= maxWidth*maxHeight {
-//            gucken wie viele max reinpassen 
+        if result % 2 == 0 {
+            result -= 1
+            print (result)
         }
         
+        
+        var array123 = Array(array1[0...result])
         array123 = array123.shuffled()
-        print (breite, hoehe ,maxWidth, maxHeight)
         
         var counter: Int  = 1
         var x_axis:CGFloat = 50.0
         var y_axis:CGFloat = 50.0
         
-        for i in 0...2  {
+        for i in 0...maxHeightItem  {
             if i == 0 {
                 y_axis = view.frame.size.height/4
             }
-//            x_axis = (view.frame.size.height/4)
-//            TODO landscape ansicht und dann y_axis auf 50
-//            else {
-//                y_axis = 50
-//            }
-            for _ in 0...2 {
-                //            newBtn.frame.origin.y += 100
-                //                let newBtn = UIButton(frame: CGRect(
+            for _ in 0...maxWidthItem {
                 let newBtn = UIButton(frame: CGRect(
                     x: x_axis,
                     y: y_axis,
@@ -148,21 +162,14 @@ class SecondVC: UIViewController {
               print("richtig")
                 
                 view.subviews.forEach ({_ in
-//                    if sender is UIButton {
                         sender.removeFromSuperview()
                         nameBtn?.removeFromSuperview()
-//                    }
                 })
                 
-                
-//                deaktiveren der button oder verschwinden lassen
 //                wenn alle richtig highscore einblenden lassen und zählen
 //                alles fertig, dann auf nächste seite gehen
                 
 //                array123 = array123.filter(){$0 != title1}
-//                alternative
-                //                array123.index(of: "hoodie01").map { array123.remove(at: $0) }
-                //                print(array123)
 
                 
                 title1 = nil
@@ -180,6 +187,41 @@ class SecondVC: UIViewController {
                 print ("leider falsch")
             }
         
+        }
+    }
+    
+//    class FreelancerCell: UICollectionViewCell {
+//
+//
+//        let profileImageButton: UIButton = {
+//            let button = UIButton()
+//            button.backgroundColor = UIColor.white
+//            button.layer.cornerRadius = 18
+//            button.clipsToBounds = true
+//            button.setImage(UIImage(named: "Profile"), for: .normal)
+//
+//            button.translatesAutoresizingMaskIntoConstraints = false
+//            return button
+//        }()
+//
+//
+//        let nameLabel: UILabel = {
+//            let label = UILabel()
+//            label.font = UIFont.systemFont(ofSize: 14)
+//            label.textColor = UIColor.darkGray
+//            label.text = "Bob Lee"
+//            label.translatesAutoresizingMaskIntoConstraints = false
+//            return label
+//        }()
+//    }
+    
+    
+}
+
+extension Array {
+    mutating func remove(at indexes: [Int]) {
+        for index in indexes.sorted(by: >) {
+            remove(at: index)
         }
     }
 }
